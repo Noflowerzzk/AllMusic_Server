@@ -86,12 +86,12 @@ public class HttpClientUtil {
             if (cookies == null) {
                 cookies = new ArrayList<>();
             }
-//            StringBuilder cookie = new StringBuilder();
-//            for (Cookie item : cookies) {
-//                cookie.append(item.name()).append("=").append(item.value()).append(";");
-//            }
-//            cookie.append("cookie=");
-//            request.header("Cookie", cookie.toString());
+           StringBuilder cookie = new StringBuilder();
+           for (Cookie item : cookies) {
+               cookie.append(item.name()).append("=").append(item.value()).append(";");
+           }
+           // cookie.append("cookie=");
+           request.header("Cookie", cookie.toString());
             if (type == EncryptType.WEAPI) {
                 request = request.addHeader("User-Agent", UserAgent);
                 String csrfToken = "";
